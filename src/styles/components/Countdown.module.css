@@ -47,11 +47,13 @@
     align-items: center;
     justify-content: center;
 
-    border: 0;
     border-radius: 5px;
 
     background: var(--blue);
     color: var(--white);
+
+    border: none;
+    outline: none;
 
     font-size: 1.25rem;
     font-weight: 600;
@@ -59,6 +61,28 @@
     transition: background-color 0.2s;
 }
 
-.countdownButton:hover {
+.countdownButton:not(:disabled):hover {
     background: var(--blue-dark);
+    border: none;
+    outline: none;
+}
+
+.countdownButtonActive {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    outline: none;
+}
+
+.countdownButtonActive:not(:disabled):hover {
+    background: var(--red-dark);
+    color: var(--white);
+    border: none;
+    outline: none;
+}
+
+.countdownButton:disabled {
+    background: var(--white);
+    color: var(--text);
+    cursor: not-allowed;
 }
